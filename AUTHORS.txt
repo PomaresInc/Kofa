@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 Cristina Murcia Bailen <crimurbai@alu.edu.gva.es>
+=======
+Cristina Murcia Bailen <crimurbai@alu.edu.gva.es>
+>>>>>>> 0463904 (Primer Commit.)
 Javier Pomares Gómez <javpomgom@alu.edu.gva.es>
