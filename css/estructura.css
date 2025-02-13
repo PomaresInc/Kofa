@@ -1,16 +1,18 @@
 
 /* Se aplica a todos los elementos  */
+/* Se aplica a todos los elementos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
-    /* para ver el diseño de la web, útli para depurar*/
-    background: linear-gradient(to bottom, black, purple);
+
+html {
+    /* para ver el diseño de la web, útil para depurar */
+    background: linear-gradient(to bottom, black, rgb(94, 4, 64));
 }
-/* Contenedor principal
-ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de la pantalla */
+
+/* Contenedor principal */
 .grid-container {
     display: grid;
     grid-template-areas:
@@ -18,10 +20,10 @@ ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de
         "main-content main-content"
         "footer footer";
     grid-template-rows: 10vh 1fr auto; /* Altura: encabezado, contenido flexible, pie */
-    grid-template-columns: 5fr 1fr;/*250px 1fr; /* Ancho: barra lateral fija, contenido flexible */
+    grid-template-columns: 5fr 1fr auto; /* Ancho: barra lateral fija, contenido flexible */
     min-height: 100vh;
     margin-left: 2vh;
-    margin-right: 2vh ;
+    margin-right: 2vh;
 }
 
 /* Estilo para las áreas */
@@ -33,8 +35,26 @@ ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de
 
 #barra2 {
     grid-area: barra2;
-    color: white;
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+}
 
+#barra2 ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#barra2 ul li {
+    display: inline;
+}
+
+#barra2 ul li a {
+    text-decoration: none; /* Quita el subrayado */
+    color: white; /* Mantiene el color del texto */
+    font-size: 16px;
 }
 
 .logo {
@@ -46,6 +66,8 @@ ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
+    min-height: 50px;
 }
 
 header nav {
@@ -97,6 +119,7 @@ body {
 .tarjeta:hover img {
     opacity: 0.7;
 }
+
 .puntuacion {
     color: gold;
 }
@@ -104,18 +127,26 @@ body {
 .main-content {
     grid-area: main-content;
     color: white;
-    padding: 20px;
+    text-align: center;
+    padding: 10px;
+    min-height: 50px;
+    justify-content: center;
+    align-items: center;
 }
-.footer {
+
+footer {
     grid-area: footer;
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Media queries */
-
 @media (max-width: 768px) {
     main {
         width: 100%;
@@ -125,6 +156,7 @@ body {
         max-width: 200px;
     }
 }
+
 @media (max-width: 480px) {
     header nav {
         flex-direction: column;

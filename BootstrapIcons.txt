@@ -1,0 +1,3 @@
+https://icons.getbootstrap.com/icons/play/
+https://icons.getbootstrap.com/icons/person-circle/
+https://icons.getbootstrap.com/?q=person
