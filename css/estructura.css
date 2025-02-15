@@ -1,4 +1,3 @@
-
 /* Se aplica a todos los elementos  */
 /* Se aplica a todos los elementos */
 * {
@@ -19,8 +18,10 @@ html {
         "barra1 barra2"
         "main-content main-content"
         "footer footer";
-    grid-template-rows: 10vh 1fr auto; /* Altura: encabezado, contenido flexible, pie */
-    grid-template-columns: 5fr 1fr auto; /* Ancho: barra lateral fija, contenido flexible */
+    grid-template-rows: 10vh 1fr auto;
+    /* Altura: encabezado, contenido flexible, pie */
+    grid-template-columns: 5fr 1fr auto;
+    /* Ancho: barra lateral fija, contenido flexible */
     min-height: 100vh;
     margin-left: 2vh;
     margin-right: 2vh;
@@ -31,43 +32,94 @@ html {
     grid-area: barra1;
     color: white;
     text-align: left;
+    display: flex;
+    align-items: center;
 }
 
 #barra2 {
     grid-area: barra2;
+    color: white;
+
+}
+
+.logo {
+    max-width: 3em;
+}
+
+.header { 
+   display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#barra1 a {
+    margin-top: 0em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#barra1 img {
+    margin-top: 0em;
+    align-items: center;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#barra1 .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+    flex-grow: 1;
+    text-align: center;
+}
+
+#barra1 .nav-link:hover {
+    color: #6A3B4F;
+}
+
+#barra2 {
     display: flex;
-    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    align-items: center;
+    gap: 10px; /* Espacio entre los elementos */
 }
 
 #barra2 ul {
     list-style: none;
     display: flex;
-    gap: 20px;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
 #barra2 ul li {
-    display: inline;
+    margin: 0 10px;
 }
 
-#barra2 ul li a {
-    text-decoration: none; /* Quita el subrayado */
-    color: white; /* Mantiene el color del texto */
-    font-size: 16px;
+#barra2 .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+    flex-grow: 1;
+    text-align: center;
 }
 
-.logo {
-    max-width: 15%;
-    height: auto;
+#barra2 .nav-link:hover {
+    color: #6A3B4F;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    min-height: 50px;
+#barra2 .form-control {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#barra2 .form-control:focus {
+    border-color: #6A3B4F;
+    box-shadow: 0 0 5px rgba(106, 59, 79, 0.5);
+    outline: none;
 }
 
 header nav {
@@ -96,77 +148,140 @@ body {
     align-items: center;
 }
 
-.tarjeta {
+.tarjetas-contenedor {
     display: flex;
-    background: white;
+    flex-wrap: nowrap; 
+    gap: 20px; 
+    justify-content: flex-start; 
+    overflow-x: auto; 
+}
+
+.tarjeta {
+    flex: 0 0 auto; 
+    width: calc(33.333% - 20px); 
+    box-sizing: border-box; 
+    display: flex;
+    background: rgba(255, 255, 255, 0);
     padding: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
 
-.tarjeta:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-}
+    .tarjeta:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    }
 
-.tarjeta img {
-    width: 100%;
-    max-width: 250px;
-    transition: opacity 0.3s ease;
-}
-
-.tarjeta:hover img {
-    opacity: 0.7;
-}
-
-.puntuacion {
-    color: gold;
-}
-
-.main-content {
-    grid-area: main-content;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    min-height: 50px;
-    justify-content: center;
-    align-items: center;
-}
-
-footer {
-    grid-area: footer;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    min-height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Media queries */
-@media (max-width: 768px) {
-    main {
+    .tarjeta img {
         width: 100%;
-        padding: 10px;
+        max-width: 250px;
+        transition: opacity 0.3s ease;
     }
-    .tarjeta img {
-        max-width: 200px;
-    }
-}
 
-@media (max-width: 480px) {
-    header nav {
-        flex-direction: column;
+    .tarjeta:hover img {
+        opacity: 0.7;
+    }
+
+    .puntuacion {
+        color: gold;
+    }
+
+    .main-content {
+        grid-area: main-content;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        min-height: 50px;
+        justify-content: center;
         align-items: center;
     }
-    header nav ul {
-        flex-direction: column;
+
+    footer {
+        grid-area: footer;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        min-height: 50px;
+        display: flex;
+        justify-content: center;
         align-items: center;
     }
-    .tarjeta img {
-        max-width: 150px;
+
+    /* Media queries */
+    @media (max-width: 768px) {
+        main {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .tarjeta img {
+            max-width: 200px;
+        }
     }
-}
+
+    @media (max-width: 480px) {
+        header nav {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tarjeta img {
+            max-width: 150px;
+        }
+    }
+    @media (max-width: 1024px) {
+        .tarjeta {
+            width: calc(33.333% - 20px); 
+        }
+    
+        .tarjeta img {
+            max-width: 250px; 
+        }
+    
+        #barra2 ul li a {
+            display: none; 
+        }
+    
+        #barra2 ul li a i {
+            font-size: 24px; 
+        }
+    
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 10px;
+        }
+    
+        footer ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+    
+        footer ul li {
+            display: inline;
+        }
+    
+        footer ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+    }
+    
+    @media (min-width: 1025px) {
+       
+    }
+
