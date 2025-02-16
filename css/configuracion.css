@@ -4,8 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-html{
-    /* para ver el diseño de la web, útli para depurar*/
+
+html {
+    /* para ver el diseño de la web, útil para depurar */
     background: linear-gradient(to bottom, black, rgb(94, 4, 64));
 }
 
@@ -13,11 +14,12 @@ body {
     font-family: Arial, sans-serif;
     color: #fff;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+    align-items: flex-start; /* Alinea los elementos en la parte superior izquierda */
     height: 100vh;
     margin: 0;
 }
+
 .container {
     background: #1e1e1e;
     padding: 20px;
@@ -26,10 +28,14 @@ body {
     width: 100%;
     max-width: 400px;
     text-align: center;
+    margin-top: 20px; /* Añade un margen superior para separar del header */
+    align-self: center; /* Centra el contenedor horizontalmente */
 }
+
 h2 {
     margin-bottom: 20px;
 }
+
 input {
     width: 100%;
     padding: 10px;
@@ -37,6 +43,7 @@ input {
     border: none;
     border-radius: 5px;
 }
+
 button {
     background: #4A5F30;
     color: white;
@@ -46,11 +53,75 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); 
 }
+
 button:hover {
-    background: #4A5F30;
+    background: rgb(74, 95, 48);
+    box-shadow: 0px 4px 6px rgba(46, 46, 46, 0.3); 
 }
 .terms {
     font-size: 12px;
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex;
+    width: 75%;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    background-color: #33333300;
+}
+
+#barra1 {
+    display: flex;
+    align-items: center;
+}
+
+#barra1 a {
+    margin-top: 0em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#barra1 img {
+    margin-right: 1em;
+}
+
+#barra1 .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+    margin-left: 1em;
+}
+
+#barra1 .nav-link:hover {
+    color: #6A3B4F;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
