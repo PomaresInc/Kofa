@@ -147,6 +147,59 @@ body {
     align-items: center;
 }
 
+/* Carrusel */
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 400%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.tarjeta {
+    width: 100%;
+    flex: 1;
+}
+
+.tarjeta img {
+    width: 100%;
+    display: block;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.navegacion {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.navegacion label {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input#slide1:checked ~ .slides { transform: translateX(0%); }
+input#slide2:checked ~ .slides { transform: translateX(-25%); }
+input#slide3:checked ~ .slides { transform: translateX(-50%); }
+input#slide4:checked ~ .slides { transform: translateX(-75%); }
+
+
+/* Tarjetas */
+
 .tarjetas-contenedor {
     display: flex;
     flex-wrap: nowrap;
