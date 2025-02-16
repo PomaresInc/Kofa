@@ -7,6 +7,8 @@
     <title>Kofa</title>
     <link rel="stylesheet" href="./css/estructura.css">
     <link rel="icon" href="./img/kofa_transparente.png" type="image/png">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
 
 </head>
 
@@ -22,55 +24,58 @@
                 <a class="nav-link" href="#estrenos">Novedades</a>
             </nav>
             <nav id="barra2">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
                 <ul>
                     <li><a class="nav-link" href="configuracion.html">Perfil</a></li>
+                    <li><a class="nav-link" href="#sesion">Cerrar sesión</a></li>
                 </ul>
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             </nav>
         </header>
 
         <main class="main-content">
             <section id="estrenos">
                 <h2>Estrenos</h2>
-                <div class="tarjetas-contenedor">
-                    <div class="tarjeta">
-                        <a href="detalle-estreno.html">
-                            <img src="img/Gato.jpg" alt="Estreno">
-                        </a>
-                        <h3>Flow</h3>
-                        <p>Duración: 120 min | Año: 2024</p>
-                        <div class="puntuacion">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
-                            <i class="bi bi-star"></i>
+
+                <div class="slideshow">
+                    <input type="radio" name="slide" id="slide1" checked>
+                    <input type="radio" name="slide" id="slide2">
+                    <input type="radio" name="slide" id="slide3">
+                    <input type="radio" name="slide" id="slide4">
+                    
+                    <div class="slides">
+                        <div class="tarjeta" id="img1">
+                            <a href="detalle-estreno.html">
+                                <img src="img/Gato.jpg" alt="Estreno">
+                            </a>
+                        </div>
+                        <div class="tarjeta" id="img2">
+                            <img src="img/Sonic.jpg" alt="Estreno">
+                        </div>
+                        <div class="tarjeta" id="img3">
+                            <img src="img/La_acompañante.jpg" alt="Estreno">
+                        </div>
+                        <div class="tarjeta" id="img4">
+                            <img src="img/Nosferatu.jpg" alt="Película">
                         </div>
                     </div>
                     
-                    <div class="tarjetas-contenedor">
-                        <div class="tarjeta">
-                            <img src="img/Sonic.jpg" alt="Estreno">
-                            <h3>Flow</h3>
-                            <p>Duración: 120 min | Año: 2024</p>
-                            <div class="puntuacion">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-half"></i>
-                                <i class="bi bi-star"></i>
-                            </div>
-                        </div>
-
+                    <div class="navegacion">
+                        <label for="slide1"></label>
+                        <label for="slide2"></label>
+                        <label for="slide3"></label>
+                        <label for="slide4"></label>
+                    </div>
                 </div>
             </section>
+
             <section id="peliculas">
                 <h2>Películas</h2>
                 <div class="tarjetas-contenedor">
+
                     <div class="tarjeta">
-                        <img src="img/THE SHINING.jpeg" alt="Película">
-                        <h3>Título</h3>
-                        <p>Duración: 120 min | Año: 2024</p>
+                        <a href="detalle-Peli.html">
+                            <img src="img/El_resplandor.jpg " alt="Pelicula">
+                        </a>
                         <div class="puntuacion">
                             <i class="bi bi-star-fill"></i>
                             <i class="bi bi-star-fill"></i>
@@ -79,16 +84,58 @@
                             <i class="bi bi-star"></i>
                         </div>
                     </div>
-                   
+
+                    <div class="tarjeta">
+                        <a href="detalle.html">
+                            <img src="img/La_comunidad_del_anillo.jpg " alt="Pelicula">
+                        </a>
+                        <div class="puntuacion">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta">
+                        <a href="detalle.html">
+                            <img src="img/Intocable.jpg " alt="Pelicula">
+                        </a>
+                        <div class="puntuacion">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta">
+                        <a href="detalle.html">
+                            <img src="img/Your_name.jpg " alt="Pelicula">
+                        </a>
+                        <div class="puntuacion">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                    </div>
                 </div>
             </section>
+
+
             <section id="series">
                 <h2>Series</h2>
+
                 <div class="tarjetas-contenedor">
+
                     <div class="tarjeta">
-                        <img src="img/house.jpg " alt="Serie">
-                        <h3>Título</h3>
-                        <p>Duración: 120 min | Año: 2024</p>
+                        <a href="detalle-Serie.html">
+                            <img src="img/house.jpg " alt="Serie">
+                        </a>
                         <div class="puntuacion">
                             <i class="bi bi-star-fill"></i>
                             <i class="bi bi-star-fill"></i>
@@ -97,18 +144,61 @@
                             <i class="bi bi-star"></i>
                         </div>
                     </div>
-                   
+
+
+                    <div class="tarjeta">
+                        <a href="detalle.html">
+                            <img src="img/Padre_familia.jpg " alt="Serie">
+                        </a>
+                        <div class="puntuacion">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta">
+                        <a href="detalle.html">
+                            <img src="img/Dark.jpg " alt="Serie">
+                        </a>
+                        <div class="puntuacion">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta">
+                        <a href="detalle.html">>
+                            <img src="img/Bojack_Horseman.jpg " alt="Serie">
+                        </a>
+                        <div class="puntuacion">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
+
         <footer>
             <p>&copy; 2024 - Contacto: Kofa@gmail.com</p>
-            <div class="redes-sociales">
-                <i class="bi bi-facebook"></i>
-                <i class="bi bi-twitter"></i>
-                <i class="bi bi-instagram"></i> 
-            </div>   
-        </footer>  
+            <div class="footer">
+                <a href="buscar.html" class="nav-link">
+                    <i class="bi bi-search"></i>
+                </a>
+                <a href="cerrar_sesion.html" class="nav-link">
+                    <i class="bi bi-box-arrow-right"></i>
+                </a>
+            </div>
+        </footer>
     </div>
 </body>
 
