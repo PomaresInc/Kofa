@@ -1,4 +1,3 @@
-/* Se aplica a todos los elementos  */
 /* Se aplica a todos los elementos */
 * {
 
@@ -161,6 +160,7 @@ body {
     width: calc(25% - 20px);
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     background: rgba(255, 255, 255, 0);
     padding: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -185,6 +185,7 @@ body {
 
 .puntuacion {
     color: gold;
+    display: flex;
 }
 
 .main-content {
@@ -218,19 +219,91 @@ footer {
     align-items: center;
 }
 
+footer .nav-link {
+    display:inline-flex;
+    padding: 10px;
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+footer .nav-link:hover {
+    color: #6A3B4F; 
+}
+
+footer .nav-link:active {
+    color: inherit !important; 
+    text-decoration: none !important; 
+}
+
 /* Media queries */
 @media (max-width: 768px) {
+    .grid-container {
+        margin-left: 0;
+        margin-right: 0;
+    }
 
+    /* Barra de navegación de opciones en la parte izquierda sin texto */
+    #barra1 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #barra1 .nav-link {
+        display: none;
+        /* Oculta el texto de los enlaces */
+    }
+
+    #barra1 img {
+        margin: 0;
+        /* Ajusta el margen de la imagen del logo */
+    }
+
+    /* Oculta la barra de navegación de configuración */
+    #barra2 {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
+    .grid-container {
+        margin-left: 0;
+        margin-right: 0;
+        display: grid;
+        grid-template-areas:
+            "main-content"
+            "footer";
+        grid-template-rows: 1fr auto;
+        grid-template-columns: 1fr;
+    }
 
-}
+    /* Oculta la barra de navegación de opciones */
+    #barra1 {
+        display: none;
+    }
 
-@media (max-width: 1024px) {
+    /* Oculta la barra de navegación de configuración */
+    #barra2 {
+        display: none;
+    }
 
-}
+    /* Muestra solo la barra de navegación inferior con las opciones de buscar y cerrar sesión */
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+        text-decoration: none;
+        text-emphasis: none;
+    }
 
-@media (min-width: 1025px) {
-    
+    footer .nav-link span {
+        display: none;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    footer .nav-link:active {
+        color: inherit;
+        text-decoration: none;
+    }
 }
