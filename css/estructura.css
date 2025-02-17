@@ -1,4 +1,13 @@
 /* Se aplica a todos los elementos */
+:root{
+    --color-primi: #4A5F30;
+    --color-secun: #6A3B4F;
+    --color-fondo: #1e1e1e;
+    --color-texto: #fff;
+    --color-texto-secundario: #ccc;
+    --color-borde: #ccc;
+}
+
 * {
 
     box-sizing: border-box;
@@ -27,7 +36,7 @@ html {
 /* Estilo para las áreas */
 #barra1 {
     grid-area: barra1;
-    color: white;
+    color: var(--color-texto);
     text-align: left;
     display: flex;
     align-items: center;
@@ -35,9 +44,8 @@ html {
 
 #barra2 {
     grid-area: barra2;
-    color: white;
+    color: var(--color-texto);
     text-align: right;
-
 }
 
 .logo {
@@ -64,7 +72,7 @@ html {
 }
 
 #barra1 .nav-link {
-    color: white;
+    color:var(--color-texto);
     text-decoration: none;
     font-size: 1.2em;
     transition: color 0.3s;
@@ -73,14 +81,13 @@ html {
 }
 
 #barra1 .nav-link:hover {
-    color: #4A5F30;
+    color: var(--color-primi);
 }
 
 #barra2 {
     display: flex;
     align-items: right;
     gap: 10px;
-    /* Espacio entre los elementos */
 }
 
 #barra2 ul {
@@ -95,7 +102,7 @@ html {
 }
 
 #barra2 .nav-link {
-    color: white;
+    color: var(--color-texto);
     text-decoration: none;
     font-size: 1.2em;
     transition: color 0.3s;
@@ -104,7 +111,7 @@ html {
 }
 
 #barra2 .nav-link:hover {
-    color: #4A5F30;
+    color: var(--color-primi);
 }
 
 #barra2 .form-control {
@@ -116,7 +123,7 @@ html {
 }
 
 #barra2 .form-control:focus {
-    border-color: #6A3B4F;
+    border-color: var(--color-secun);
     box-shadow: 0 0 5px rgba(106, 59, 79, 0.5);
     outline: none;
 }
@@ -186,7 +193,7 @@ input[type="radio"] {
     width: 12px;
     height: 12px;
     margin: 0 5px;
-    background: gray;
+    background: var(--color-borde);
     border-radius: 50%;
     cursor: pointer;
     transition: background 0.3s;
@@ -263,7 +270,7 @@ input#slide4:checked ~ .slides { transform: translateX(-75%); }
 footer {
     grid-area: footer;
     background-color: #4A5F30;
-    color: white;
+    color: var(--color-texto);
     text-align: center;
     padding: 10px;
     min-height: 40px;
@@ -280,7 +287,7 @@ footer .nav-link {
 }
 
 footer .nav-link:hover {
-    color: #6A3B4F; 
+    color: var(--color-secun); 
 }
 
 footer .nav-link:active {
@@ -289,33 +296,87 @@ footer .nav-link:active {
 }
 
 /* Media queries */
+@media (min-width: 1025px) {
+
+}
+
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-areas:
+            "barra2 barra2"
+            "main-content main-content"
+            "footer footer";
+        grid-template-rows: 10vh 1fr auto;
+        grid-template-columns: 1fr;
+    }
+
+    #barra1 {
+        display: none;
+    }
+
+    #barra2 {
+        justify-content: center;
+    }
+
+    #barra2 .nav-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #barra2 .nav-link span {
+        display: none;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    footer .nav-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    footer .nav-link span {
+        display: none;
+    }
+}
+
+
 @media (max-width: 768px) {
     .grid-container {
         margin-left: 0;
         margin-right: 0;
+        grid-template-areas:
+            "barra1 main-content"
+            "footer footer";
+        grid-template-rows: 1fr auto;
+        grid-template-columns: auto 1fr;
     }
 
-    /* Barra de navegación de opciones en la parte izquierda sin texto */
     #barra1 {
         flex-direction: column;
         align-items: flex-start;
+        display: flex;
     }
 
     #barra1 .nav-link {
         display: none;
-        /* Oculta el texto de los enlaces */
     }
 
     #barra1 img {
         margin: 0;
-        /* Ajusta el margen de la imagen del logo */
     }
 
-    /* Oculta la barra de navegación de configuración */
     #barra2 {
         display: none;
     }
 }
+
 
 @media (max-width: 480px) {
     .grid-container {

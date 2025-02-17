@@ -4,6 +4,7 @@
     align-items: flex-start;
     padding: 20px;
     color: white;
+    counter-reset: section;
 }
 
 .peli-detalles {
@@ -66,4 +67,9 @@
     resize: none;
     color: black;
     margin-top: 10px; 
+}
+
+.comentarios p::before{
+    counter-increment: section;
+    content: "Comentario " counter(section) ": ";
 }
