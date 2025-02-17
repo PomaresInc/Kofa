@@ -29,6 +29,7 @@ body {
     max-width: 400px;
     text-align: center;
     margin-top: 20px; /* Añade un margen superior para separar del header */
+    margin-left: 6%;
     align-self: center; /* Centra el contenedor horizontalmente */
 }
 
@@ -68,52 +69,6 @@ button:hover {
     justify-content: flex;
     width: 75%;
 }
-
-.header {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px;
-    background-color: #33333300;
-}
-
-#barra1 {
-    display: flex;
-    align-items: center;
-}
-
-#barra1 a {
-    margin-top: 0em;
-    margin-left: 1em;
-    margin-right: 1em;
-}
-
-#barra1 img {
-    margin-right: 1em;
-}
-
-#barra1 .nav-link {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: color 0.3s;
-    margin-left: 1em;
-}
-
-#barra1 .nav-link:hover {
-    color: #6A3B4F;
-}
-
-header nav {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 10px;
-}
-
-
-
 footer {
     grid-area: footer;
     background-color: #333;

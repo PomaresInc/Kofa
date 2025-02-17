@@ -5,30 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/configuracion.css">
-    <title>Registro - Plataforma Streaming</title>
+    <link rel="stylesheet" href="./css/estructura.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+    <title>Registro</title>
 </head>
 
 <body>
     <div class="grid-container">
         <header class="header">
-            <nav id="barra1">
-                <a class="nav-link" href="index.html">Home</a>
-            </nav>
-        </header>
-    </div>
-    <div class="container">
-        <h2>Regístrate</h2>
-        <form action="#" method="POST">
-            <input type="text" name="name" placeholder="Nombre usuario" required>
-            <input type="email" name="email" placeholder="Correo electrónico" required>
-            <input type="password" name="password" placeholder="Contraseña" required>
-            <div class="terms">
-                <input type="checkbox" required> Acepto los términos y condiciones
+            <div id="barra1">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="index.html#peliculas" class="nav-link">Películas</a>
+                <a href="index.html#series" class="nav-link">Series</a>
             </div>
-            <button type="submit">Crear cuenta</button>
-        </form>
+            <div id="barra2">
+                <input type="text" class="form-control search-box" placeholder="Buscar película...">
+            </div>
+        </header>
+        <main class="main-content">
+            <div class=" container">
+                <h2>Regístrate</h2>
+                <form action="#" method="POST">
+                    <input type="text" name="name" placeholder="Nombre usuario" required>
+                    <input type="email" name="email" placeholder="Correo electrónico" required>
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                    <div class="terms">
+                        <input type="checkbox" required> Acepto los términos y condiciones
+                    </div>
+                    <button type="submit">Crear cuenta</button>
+                </form>
+                </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 - Contacto: Kofa@gmail.com</p>
+            <div class="footer">
+                <a href="buscar.html" class="nav-link">
+                    <i class="bi bi-search"></i>
+                </a>
+                <a href="cerrar_sesion.html" class="nav-link">
+                    <i class="bi bi-box-arrow-right"></i>
+                </a>
+            </div>
+        </footer>
     </div>
-
 </body>
 
 </html>

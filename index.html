@@ -18,10 +18,11 @@
         <header class="header">
             <nav id="barra1">
                 <img src="./img/kofa_transparente.png" alt="Logo Kofa" class="logo">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="index.html">Inicio</a>
                 <a class="nav-link" href="#series">Series</a>
+                <a class="nav-link" href="#">Favoritos</a>
                 <a class="nav-link" href="#peliculas">Peliculas</a>
-                <a class="nav-link" href="#estrenos">Novedades</a>
+                <a class="nav-link" href="#estrenos">Estrenos</a>
             </nav>
             <nav id="barra2">
                 <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
@@ -29,7 +30,6 @@
                     <li><a class="nav-link" href="configuracion.html">Perfil</a></li>
                     <li><a class="nav-link" href="#sesion">Cerrar sesión</a></li>
                 </ul>
-                <!--<input class="form-control me-2" type="search" placeholder="Search" aria-label="Buhca mi arma">-->
             </nav>
         </header>
 
@@ -37,57 +37,34 @@
             <section id="estrenos">
                 <h2>Estrenos</h2>
 
-                <div class="tarjetas-contenedor">
-                    <div class="tarjeta">
-                        <a href="detalle.html">
-                            <img src="img/Gato.jpg" alt="Estreno">
-                        </a>
-                        <div class="puntuacion">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
-                            <i class="bi bi-star"></i>
+                <div class="slideshow">
+                    <input type="radio" name="slide" id="slide1" checked>
+                    <input type="radio" name="slide" id="slide2">
+                    <input type="radio" name="slide" id="slide3">
+                    <input type="radio" name="slide" id="slide4">
+                    
+                    <div class="slides">
+                        <div class="tarjeta" id="img1">
+                            <a href="detalle-estreno.html">
+                                <img src="img/Gato.jpg" alt="Estreno">
+                            </a>
                         </div>
-                    </div>
-
-                    <div class="tarjeta">
-                        <a href="detalle.html">
+                        <div class="tarjeta" id="img2">
                             <img src="img/Sonic.jpg" alt="Estreno">
-                        </a>
-                        <div class="puntuacion">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
-                            <i class="bi bi-star"></i>
                         </div>
-                    </div>
-
-                    <div class="tarjeta">
-                        <a href="detalle.html">
+                        <div class="tarjeta" id="img3">
                             <img src="img/La_acompañante.jpg" alt="Estreno">
-                        </a>
-                        <div class="puntuacion">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
-                            <i class="bi bi-star"></i>
+                        </div>
+                        <div class="tarjeta" id="img4">
+                            <img src="img/Nosferatu.jpg" alt="Película">
                         </div>
                     </div>
-
-                    <div class="tarjeta">
-                        <a href="detalle.html">
-                            <img src="img/Nosferatu.jpg" alt="Película">
-                        </a>
-                        <div class="puntuacion">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
-                            <i class="bi bi-star"></i>
-                        </div>
+                    
+                    <div class="navegacion">
+                        <label for="slide1"></label>
+                        <label for="slide2"></label>
+                        <label for="slide3"></label>
+                        <label for="slide4"></label>
                     </div>
                 </div>
             </section>
@@ -95,6 +72,19 @@
             <section id="peliculas">
                 <h2>Películas</h2>
                 <div class="tarjetas-contenedor">
+
+                    <div class="tarjeta">
+                        <a href="detalle-Peli.html">
+                            <img src="img/El_resplandor.jpg " alt="Pelicula">
+                        </a>
+                        <div class="puntuacion">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                    </div>
 
                     <div class="tarjeta">
                         <a href="detalle.html">
@@ -134,19 +124,6 @@
                             <i class="bi bi-star"></i>
                         </div>
                     </div>
-
-                    <div class="tarjeta">
-                        <a href="detalle.html">
-                            <img src="img/El_resplandor.jpg " alt="Pelicula">
-                        </a>
-                        <div class="puntuacion">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
-                            <i class="bi bi-star"></i>
-                        </div>
-                    </div>
                 </div>
             </section>
 
@@ -157,15 +134,15 @@
                 <div class="tarjetas-contenedor">
 
                     <div class="tarjeta">
-                        <a href="detalle.html">
+                        <a href="detalle-Serie.html">
                             <img src="img/house.jpg " alt="Serie">
                         </a>
                         <div class="puntuacion">
                             <i class="bi bi-star-fill"></i>
                             <i class="bi bi-star-fill"></i>
                             <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
-                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
                         </div>
                     </div>
 
@@ -178,8 +155,8 @@
                             <i class="bi bi-star-fill"></i>
                             <i class="bi bi-star-fill"></i>
                             <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
-                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
                         </div>
                     </div>
 
