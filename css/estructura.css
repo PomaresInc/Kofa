@@ -1,8 +1,6 @@
-/* Se aplica a todos los elementos  */
 /* Se aplica a todos los elementos */
 * {
-    margin: 0;
-    padding: 0;
+
     box-sizing: border-box;
 }
 
@@ -23,8 +21,7 @@ html {
     grid-template-columns: 5fr 1fr auto;
     /* Ancho: barra lateral fija, contenido flexible */
     min-height: 100vh;
-    margin-left: 2vh;
-    margin-right: 2vh;
+
 }
 
 /* Estilo para las áreas */
@@ -39,6 +36,7 @@ html {
 #barra2 {
     grid-area: barra2;
     color: white;
+    text-align: right;
 
 }
 
@@ -46,8 +44,8 @@ html {
     max-width: 3em;
 }
 
-.header { 
-   display: flex;
+.header {
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
@@ -75,13 +73,14 @@ html {
 }
 
 #barra1 .nav-link:hover {
-    color: #6A3B4F;
+    color: #4A5F30;
 }
 
 #barra2 {
     display: flex;
-    align-items: center;
-    gap: 10px; /* Espacio entre los elementos */
+    align-items: right;
+    gap: 10px;
+    /* Espacio entre los elementos */
 }
 
 #barra2 ul {
@@ -105,7 +104,7 @@ html {
 }
 
 #barra2 .nav-link:hover {
-    color: #6A3B4F;
+    color: #4A5F30;
 }
 
 #barra2 .form-control {
@@ -148,140 +147,216 @@ body {
     align-items: center;
 }
 
-.tarjetas-contenedor {
+/* Carrusel */
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
     display: flex;
-    flex-wrap: nowrap; 
-    gap: 20px; 
-    justify-content: flex-start; 
-    overflow-x: auto; 
+    width: 400%;
+    transition: transform 0.5s ease-in-out;
 }
 
 .tarjeta {
-    flex: 0 0 auto; 
-    width: calc(33.333% - 20px); 
-    box-sizing: border-box; 
+    width: 100%;
+    flex: 1;
+}
+
+.tarjeta img {
+    width: 100%;
+    display: block;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.navegacion {
     display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.navegacion label {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input#slide1:checked ~ .slides { transform: translateX(0%); }
+input#slide2:checked ~ .slides { transform: translateX(-25%); }
+input#slide3:checked ~ .slides { transform: translateX(-50%); }
+input#slide4:checked ~ .slides { transform: translateX(-75%); }
+
+
+/* Tarjetas */
+
+.tarjetas-contenedor {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1%;
+    justify-content: flex-start;
+    overflow-x: auto;
+}
+
+.tarjeta {
+    flex: 5 5 auto;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     background: rgba(255, 255, 255, 0);
-    padding: 10px;
+    padding: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
 
-    .tarjeta:hover {
-        transform: scale(1.05);
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+.tarjeta:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta img {
+    width: 250px;
+    max-width: 250px;
+    transition: opacity 0.3s ease;
+}
+
+.tarjeta:hover img {
+    opacity: 0.7;
+}
+
+.puntuacion {
+    color: gold;
+    display: flex;
+}
+
+.main-content {
+    grid-area: main-content;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    min-height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content div {
+    grid-area: main-content;
+    text-align: center;
+    padding: 10px;
+    min-height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #4A5F30;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    min-height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .nav-link {
+    display:inline-flex;
+    padding: 10px;
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+footer .nav-link:hover {
+    color: #6A3B4F; 
+}
+
+footer .nav-link:active {
+    color: inherit !important; 
+    text-decoration: none !important; 
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .grid-container {
+        margin-left: 0;
+        margin-right: 0;
     }
 
-    .tarjeta img {
-        width: 100%;
-        max-width: 250px;
-        transition: opacity 0.3s ease;
+    /* Barra de navegación de opciones en la parte izquierda sin texto */
+    #barra1 {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .tarjeta:hover img {
-        opacity: 0.7;
+    #barra1 .nav-link {
+        display: none;
+        /* Oculta el texto de los enlaces */
     }
 
-    .puntuacion {
-        color: gold;
+    #barra1 img {
+        margin: 0;
+        /* Ajusta el margen de la imagen del logo */
     }
 
-    .main-content {
-        grid-area: main-content;
-        color: white;
-        text-align: center;
-        padding: 10px;
-        min-height: 50px;
-        justify-content: center;
-        align-items: center;
+    /* Oculta la barra de navegación de configuración */
+    #barra2 {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        margin-left: 0;
+        margin-right: 0;
+        display: grid;
+        grid-template-areas:
+            "main-content"
+            "footer";
+        grid-template-rows: 1fr auto;
+        grid-template-columns: 1fr;
     }
 
+    /* Oculta la barra de navegación de opciones */
+    #barra1 {
+        display: none;
+    }
+
+    /* Oculta la barra de navegación de configuración */
+    #barra2 {
+        display: none;
+    }
+
+    /* Muestra solo la barra de navegación inferior con las opciones de buscar y cerrar sesión */
     footer {
-        grid-area: footer;
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 10px;
-        min-height: 50px;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+        text-decoration: none;
+        text-emphasis: none;
     }
 
-    /* Media queries */
-    @media (max-width: 768px) {
-        main {
-            width: 100%;
-            padding: 10px;
-        }
-
-        .tarjeta img {
-            max-width: 200px;
-        }
+    footer .nav-link span {
+        display: none;
+        text-decoration: none;
+        color: inherit;
     }
 
-    @media (max-width: 480px) {
-        header nav {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        header nav ul {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .tarjeta img {
-            max-width: 150px;
-        }
+    footer .nav-link:active {
+        color: inherit;
+        text-decoration: none;
     }
-    @media (max-width: 1024px) {
-        .tarjeta {
-            width: calc(33.333% - 20px); 
-        }
-    
-        .tarjeta img {
-            max-width: 250px; 
-        }
-    
-        #barra2 ul li a {
-            display: none; 
-        }
-    
-        #barra2 ul li a i {
-            font-size: 24px; 
-        }
-    
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #ffffff;
-            padding: 10px;
-        }
-    
-        footer ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-            justify-content: center;
-        }
-    
-        footer ul li {
-            display: inline;
-        }
-    
-        footer ul li a {
-            text-decoration: none;
-            color: white;
-            font-size: 16px;
-        }
-    }
-    
-    @media (min-width: 1025px) {
-       
-    }
-
+}
